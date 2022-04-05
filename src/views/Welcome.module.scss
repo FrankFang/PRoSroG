@@ -1,18 +1,23 @@
-.wrapper{
+.wrapper {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  > header{
+  background-image: linear-gradient(to bottom, #5d33be 0%, #8f4cd7 100%);
+  > header {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 66px;
+    color: #D4D4EE;
   }
-  > main{
+  > main {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
-  > footer{
+  > footer {
     flex-shrink: 0;
   }
 }

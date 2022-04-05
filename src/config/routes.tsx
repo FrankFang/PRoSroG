@@ -1,8 +1,8 @@
 import { RouteRecordRaw } from "vue-router";
-import { First } from "../components/welcome/first";
-import { Forth } from "../components/welcome/forth";
-import { Second } from "../components/welcome/second";
-import { Third } from "../components/welcome/third";
+import { First } from "../components/welcome/First";
+import { Forth } from "../components/welcome/Forth";
+import { Second } from "../components/welcome/Second";
+import { Third } from "../components/welcome/Third";
 import { Bar } from "../views/Bar";
 import { Foo } from "../views/Foo";
 import { Welcome } from "../views/Welcome";
