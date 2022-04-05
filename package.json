@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "sass": "1.49.11",
     "vue": "3.2.31",
     "vue-router": "4.0.14"
   },
