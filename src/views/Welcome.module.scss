@@ -17,8 +17,27 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
+    margin: 16px 16px var(--welcome-nav-gap);
   }
   > footer {
     flex-shrink: 0;
   }
+}
+
+.slide_fade_enter_active,
+.slide_fade_leave_active {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-out;
+}
+
+.slide_fade_enter_from {
+  transform: translateX(100vw);
+}
+.slide_fade_leave_to {
+  transform: translateX(-100vw);
 }
