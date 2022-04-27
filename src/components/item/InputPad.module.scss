@@ -1,0 +1,24 @@
+.wrapper {
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--button-border-color);
+  > button {
+    border: none;
+    border-right: 1px solid var(--button-border-color);
+    border-bottom: 1px solid var(--button-border-color);
+    width: 25%;
+    height: 48px;
+    background: transparent;
+    &:nth-child(4n){
+      border-right: none;
+    }
+    &:nth-child(13),
+    &:nth-child(14),
+    &:nth-child(15),
+    &:nth-child(16){
+      border-bottom: none;
+    }
+  }
+}
