@@ -1,5 +1,29 @@
 .wrapper {
 }
+.dateAndAmount{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  font-family: monospace;
+  border-top: 1px solid var(--button-border-color);
+  >.date{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: var(--date-text);
+    .icon{
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+  }
+  >.amount{
+    font-size: 20px;
+    color: var(--amount-text);
+  }
+}
 .buttons {
   display: flex;
   flex-wrap: wrap;
