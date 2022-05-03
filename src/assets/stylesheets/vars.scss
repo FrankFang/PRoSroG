@@ -25,9 +25,16 @@
   --top-safe-area-height: 24px;
   --tabs-indicator-bg: rgba(255, 255, 255, 0.5);
   --button-border-color: #ddd;
-  --amount-text: #53A867;
+  --amount-text: #53a867;
   --date-text: #999999;
   --button-bg: white;
-  --button-bg-important: #5C33BE;
-  --button-text-important:white;
+  --button-bg-important: #5c33be;
+  --button-text-important: white;
+  --input-min-height: 48px;
+  --input-border-color: #5c33be;
+  --input-radius: var(--button-radius);
+  --input-shadow: rgba(0,0,0,0.25);
+  --error-color: #E10505;
+  --emoji-nav-text: #999;
+  --emoji-nav-text-selected: #333;
 }
