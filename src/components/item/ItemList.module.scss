@@ -14,8 +14,18 @@
       padding: 12px 16px;
       color: var(--dialog-header-text);
     }
-    > main{
-      
+    > main {
+    }
+  }
+}
+.actions {
+  text-align: right;
+  button {
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+    & + & {
+      margin-left: 16px;
     }
   }
 }
