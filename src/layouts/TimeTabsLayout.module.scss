@@ -1,0 +1,31 @@
+.wrapper {
+}
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  background: var(--overlay-mask-bg);
+  &_inner {
+    background: var(--bg);
+    width: 80vw;
+    > header {
+      background: var(--main);
+      padding: 12px 16px;
+      color: var(--dialog-header-text);
+    }
+    > main {
+    }
+  }
+}
+.actions {
+  text-align: right;
+  button {
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+    & + & {
+      margin-left: 16px;
+    }
+  }
+}
