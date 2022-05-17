@@ -1,0 +1,19 @@
+.wrapper{
+  
+}
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 0 0;
+  .icon{
+    width: 64px;
+    height: 68px;
+  }
+  .appName{
+    color: var(--app-name-text);    
+    font-weight: bold;
+    font-size: 32px;
+  }
+}
