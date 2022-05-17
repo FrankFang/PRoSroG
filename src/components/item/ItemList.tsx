@@ -4,6 +4,7 @@ import { MainLayout } from '../../layouts/MainLayout';
 import { Button } from '../../shared/Button';
 import { Form, FormItem } from '../../shared/Form';
 import { Icon } from '../../shared/Icon';
+import { OverlayIcon } from '../../shared/Overlay';
 import { Tab, Tabs } from '../../shared/Tabs';
 import { Time } from '../../shared/time';
 import s from './ItemList.module.scss';
@@ -44,7 +45,7 @@ export const ItemList = defineComponent({
       <MainLayout>{
         {
           title: () => '山竹记账',
-          icon: () => <Icon name="menu" />,
+          icon: () => <OverlayIcon />,
           default: () => <>
             <Tabs classPrefix={'customTabs'} v-model:selected={refSelected.value}
               onUpdate:selected={onSelect}>
