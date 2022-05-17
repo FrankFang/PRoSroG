@@ -1,9 +1,8 @@
 :root {
-  --bg: white;
-  --text: #333;
   --amount-text: #53a867;
-  --button-bg: #5c33be;
+  --bg: white;
   --button-bg-danger: #E10505;
+  --button-bg: #5c33be;
   --button-border-color: #ddd;
   --button-font-size: 18px;
   --button-height: 48px;
@@ -20,8 +19,8 @@
   --input-min-height: 48px;
   --input-radius: var(--button-radius);
   --input-shadow: rgba(0,0,0,0.25);
-  --list-tag-text: #333;
   --list-amount-text: var(--amount-text);
+  --list-tag-text: #333;
   --list-time-text: var(--date-text);
   --main: #5c33be;
   --navbar-bg-end: var(--welcome-bg-end);
@@ -36,12 +35,14 @@
   --overlay-user-text: white;
   --tabs-indicator-bg: rgba(255, 255, 255, 0.5);
   --tag-bg: #EFEFEF;
+  --text: #333;
   --top-safe-area-height: 24px;
   --total-bg: #252A43;
-  --total-text: white;
-  --total-income: #FE7275;
   --total-expenses: #53A867;
+  --total-income: #FE7275;
+  --total-text: white;
   --transition-duration: 0.5s;
+  --van-overlay-z-index: 64;
   --welcome-bg-end: #8f4cd7;
   --welcome-bg-start: #5d33be;
   --welcome-card-bg: white;
@@ -49,6 +50,6 @@
   --welcome-nav-height: 64px;
   --welcome-text: white;
   --z-index-bottom-nav: 8;
-  --z-index-overlay: 16;
   --z-index-navbar: 32;
+  --z-index-overlay: 16;
 }
