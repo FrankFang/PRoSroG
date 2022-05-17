@@ -26,6 +26,11 @@
       border-color: var(--error-color);
     }
   }
+  &.select{
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--input-radius);
+    padding: 0 8px;
+  }
   &.validationCodeInput {
     flex-grow: 0;
     width: 9em;
