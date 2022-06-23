@@ -4,6 +4,7 @@ import { useBool } from '../hooks/useBool';
 import { MainLayout } from '../layouts/MainLayout';
 import { Button } from '../shared/Button';
 import { Form, FormItem } from '../shared/Form';
+import { history } from '../shared/history';
 import { http } from '../shared/Http';
 import { Icon } from '../shared/Icon';
 import { hasError, validate } from '../shared/validate';
@@ -21,7 +22,6 @@ export const SignInPage = defineComponent({
     const refValidationCode = ref<any>()
     const { ref: refDisabled, toggle, on: disabled, off: enable } = useBool(false)
     const onSubmit = async (e: Event) => {
-      console.log('submit')
       e.preventDefault()
       Object.assign(errors, {
         email: [], code: []
@@ -31,8 +31,10 @@ export const SignInPage = defineComponent({
         { key: 'email', type: 'pattern', regex: /.+@.+/, message: '必须是邮箱地址' },
         { key: 'code', type: 'required', message: '必填' },
       ]))
-      if(!hasError(errors)){
-        const response = await http.post('/session', formData)
+      if (!hasError(errors)) {
+        const response = await http.post<{ jwt: string }>('/session', formData)
+        localStorage.setItem('jwt', response.data.jwt)
+        history.push('/')
       }
     }
     const onError = (error: any) => {
