@@ -3,10 +3,6 @@
   flex-direction: column;
   height: calc(100vh - 88px);
 }
-.more{
-  padding: 16px;
-  text-align: center;
-}
 .tabs {
   flex-grow: 1;
   flex-shrink: 1;
@@ -16,38 +12,8 @@
   flex-grow: 0;
   flex-shrink: 0;
 }
-.tags_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 16px;
-}
+
 .createTag {
   fill: var(--main);
 }
-.tag {
-  position: relative;
-  width: 20vw;
-  height: calc(20vw * 1.14);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .sign {
-    width: 12vw;
-    height: 12vw;
-    background: var(--tag-bg);
-    border: 1px solid var(--tag-bg);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .name {
-    font-size: 12px;
-    margin-top: 4px;
-  }
-  &.selected {
-    .sign {
-      border-color: var(--main);
-    }
-  }
-}
+
