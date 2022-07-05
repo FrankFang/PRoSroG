@@ -35,12 +35,14 @@ export const mockTagIndex: Mock = (config) => {
     resources: createTag(n), pager: createPaper(page)
   })
 
-  if (kind === 'expenses' && (page === 1 || !page)) {
+  if (kind === 'expenses' && (!page || page === 1)) {
     return [200, createBody(25)]
   } else if (kind === 'expenses' && page === 2) {
     return [200, createBody(1)]
+  } else if (kind === 'income' && (!page || page === 1)) {
+    return [200, createBody(25)]
   } else {
-    return [200, { resources: createTag(20) }]
+    return [200, createBody(1)]
   }
 
 }
