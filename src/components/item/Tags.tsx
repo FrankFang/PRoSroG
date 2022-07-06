@@ -28,7 +28,7 @@ export const Tags = defineComponent({
     return () => (
       <>
         <div class={s.tags_wrapper}>
-          <RouterLink class={s.tag}>
+          <RouterLink to={`/tags/create?kind=${props.kind}`} class={s.tag}>
             <div class={s.sign}>
               <Icon name="add" class={s.createTag} />
             </div>
