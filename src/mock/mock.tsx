@@ -4,6 +4,19 @@ import { AxiosRequestConfig } from 'axios';
 type Mock = (config: AxiosRequestConfig) => [number, any]
 
 faker.setLocale('zh_CN');
+
+export const mockTagEdit: Mock = config => {
+  const createTag = (attrs?: any) =>
+    ({
+      id: createId(),
+      name: faker.lorem.word(),
+      sign: faker.internet.emoji(),
+      kind: 'expenses',
+      ...attrs
+    })
+  return [200, {resource: createTag()}]
+}
+
 export const mockTagShow: Mock = config =>{
   const createTag = (attrs?: any) =>
     ({
