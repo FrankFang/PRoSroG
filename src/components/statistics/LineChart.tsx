@@ -1,11 +1,4 @@
-import {
-  defineComponent,
-  onMounted,
-  onUpdated,
-  PropType,
-  ref,
-  watch,
-} from 'vue'
+import { defineComponent, onMounted, PropType, ref, watch } from 'vue'
 import s from './LineChart.module.scss'
 import * as echarts from 'echarts'
 import { Time } from '../../shared/time'
@@ -17,9 +10,7 @@ const echartsOption = {
     trigger: 'axis',
     formatter: ([item]: any) => {
       const [x, y] = item.data
-      return `${new Time(new Date(x)).format('YYYY年MM月DD日')} ￥${getMoney(
-        y
-      )}`
+      return `${new Time(new Date(x)).format('YYYY年MM月DD日')} ￥${getMoney(y)}`
     },
   },
   grid: [{ left: 16, top: 20, right: 16, bottom: 20 }],
