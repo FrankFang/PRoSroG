@@ -10,7 +10,7 @@ export const mockItemSummary: Mock = config => {
     "groups": [
       { "happen_at": "2022-07-18T00:00:00.000+0800", "amount": 100 },
       { "happen_at": "2022-07-22T00:00:00.000+0800", "amount": 300 },
-      { "happen_at": "2022-06-29T00:00:00.000+0800", "amount": 200 }
+      { "happen_at": "2022-07-29T00:00:00.000+0800", "amount": 200 }
     ],
     "summary": 600
   }]
