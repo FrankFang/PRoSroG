@@ -8,7 +8,7 @@ const pushMap: Record<string, string> = {
   'Welcome1': '/welcome/2',
   'Welcome2': '/welcome/3',
   'Welcome3': '/welcome/4',
-  'Welcome4': '/start',
+  'Welcome4': '/items',
 }
 export const Welcome = defineComponent({
   setup: (props, context) => {

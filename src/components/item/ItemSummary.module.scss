@@ -1,5 +1,4 @@
-.wrapper {
-}
+
 .total {
   background: var(--total-bg);
   display: flex;
@@ -65,4 +64,19 @@
 .more{
   padding-top: 32px;
   text-align: center;
+}
+
+.button {
+  width: 100%;
+  &_wrapper {
+    padding: 16px 16px;
+  }
+}
+
+.pig{
+  width: 128px;
+  height: 128px;
+  &_wrapper{
+    padding: 120px 0;
+  }
 }
