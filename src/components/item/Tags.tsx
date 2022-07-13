@@ -21,6 +21,7 @@ export const Tags = defineComponent({
         page: page + 1,
       }, {
         _mock: 'tagIndex',
+        _autoLoading: true,
       });
     });
     const onSelect = (tag: Tag) => {
