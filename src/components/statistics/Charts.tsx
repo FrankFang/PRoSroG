@@ -11,6 +11,8 @@ const DAY = 24 * 3600 * 1000
 
 type Data1Item = { happen_at: string; amount: number }
 type Data1 = Data1Item[]
+type Data2Item = { tag_id: number; tag: Tag; amount: number }
+type Data2 = Data2Item[]
 export const Charts = defineComponent({
   props: {
     startDate: {
@@ -44,9 +46,32 @@ export const Charts = defineComponent({
         happen_after: props.startDate,
         happen_before: props.endDate,
         kind: kind.value,
+        group_by: 'happen_at',
         _mock: 'itemSummary'
       })
       data1.value = response.data.groups
+      console.log(data1.value)
+    })
+
+    // data2
+
+    const data2 = ref<Data2>([])
+    const betterData2 = computed<{ name: string; value: number }[]>(() =>
+      data2.value.map((item) => ({
+        name: item.tag.name,
+        value: item.amount
+      }))
+    )
+
+    onMounted(async () => {
+      const response = await http.get<{ groups: Data2; summary: number }>('/items/summary', {
+        happen_after: props.startDate,
+        happen_before: props.endDate,
+        kind: kind.value,
+        group_by: 'tag_id',
+        _mock: 'itemSummary'
+      })
+      data2.value = response.data.groups
     })
 
     return () => (
@@ -61,7 +86,7 @@ export const Charts = defineComponent({
           v-model={kind.value}
         />
         <LineChart data={betterData1.value} />
-        <PieChart />
+        <PieChart data={betterData2.value} />
         <Bars />
       </div>
     )
