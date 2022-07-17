@@ -17,9 +17,9 @@ export const TagForm = defineComponent({
       id: undefined,
       name: '',
       sign: '',
-      kind: route.query.kind!.toString(),
+      kind: route.query.kind!.toString() as ('expenses' | 'income'),
     })
-    const errors = reactive<{ [k in keyof typeof formData]?: string[] }>({})
+    const errors = reactive<FormErrors<typeof formData>>({})
     const router = useRouter()
     const onSubmit = async (e: Event) => {
       e.preventDefault()
