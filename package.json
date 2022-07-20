@@ -11,6 +11,7 @@
     "@faker-js/faker": "7.3.0",
     "axios": "0.27.2",
     "echarts": "5.3.2",
+    "pinia": "2.0.16",
     "sass": "1.49.11",
     "svgo": "2.8.0",
     "svgstore": "3.0.1",
