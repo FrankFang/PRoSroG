@@ -1,4 +1,4 @@
-import { defineComponent, onMounted, PropType, reactive, ref, watch } from 'vue'
+import { defineComponent, onMounted, onUnmounted, PropType, reactive, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useAfterMe } from '../../hooks/useAfterMe'
 import { Button } from '../../shared/Button'
@@ -110,7 +110,7 @@ export const ItemSummary = defineComponent({
             </ol>
             <div class={s.more}>
               {itemStore.hasMore ? (
-                <Button onClick={() => itemStore.fetchItems(props.startDate, props.endDate)}>加载更多</Button>
+                <Button onClick={() => itemStore.fetchNextPage(props.startDate, props.endDate)}>加载更多</Button>
               ) : (
                 <span>没有更多</span>
               )}
