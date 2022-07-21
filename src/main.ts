@@ -6,6 +6,7 @@ import { createRouter } from 'vue-router'
 import { history } from './shared/history';
 import '@svgstore';
 import { createPinia, storeToRefs } from 'pinia';
+import { Dialog } from 'vant';
 
 
 const router = createRouter({ history, routes })
@@ -16,7 +17,7 @@ app.use(pinia)
 app.mount('#app')
 
 const meStore = useMeStore()
-const {mePromise} = storeToRefs(meStore)
+const { mePromise } = storeToRefs(meStore)
 meStore.fetchMe()
 
 
@@ -40,6 +41,6 @@ router.beforeEach((to, from) => {
   }
   return mePromise!.value!.then(
     () => true,
-    () => '/sign_in?return_to=' + to.path
+    () => '/sign_in?return_to=' + from.path
   )
 })
