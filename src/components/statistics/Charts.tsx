@@ -36,21 +36,25 @@ export const Charts = defineComponent({
       return Array.from({ length: n }).map((_, i) => {
         const time = new Time(props.startDate + 'T00:00:00.000+0800').add(i, 'day').getTimestamp()
         const item = data1.value[0]
-        const amount = item && new Date(item.happen_at).getTime() === time ? data1.value.shift()!.amount : 0
+        const amount = item && new Date(item.happen_at+'T00:00:00.000+0800').getTime() === time ? data1.value.shift()!.amount : 0
         return [new Date(time).toISOString(), amount]
       })
     })
 
     const fetchData1 = async () => {
-      const response = await http.get<{ groups: Data1; summary: number }>('/items/summary', {
-        happen_after: props.startDate,
-        happen_before: props.endDate,
-        kind: kind.value,
-        group_by: 'happen_at',
-      }, {
-        _mock: 'itemSummary',
-        _autoLoading: true,
-      })
+      const response = await http.get<{ groups: Data1; summary: number }>(
+        '/items/summary',
+        {
+          happen_after: props.startDate,
+          happen_before: props.endDate,
+          kind: kind.value,
+          group_by: 'happen_at'
+        },
+        {
+          _mock: 'itemSummary',
+          _autoLoading: true
+        }
+      )
       data1.value = response.data.groups
     }
     onMounted(fetchData1)
@@ -72,15 +76,19 @@ export const Charts = defineComponent({
       }))
     })
 
-    const fetchData2 = async ()=>{
-      const response = await http.get<{ groups: Data2; summary: number }>('/items/summary', {
-        happen_after: props.startDate,
-        happen_before: props.endDate,
-        kind: kind.value,
-        group_by: 'tag_id',
-      }, {
-        _mock: 'itemSummary'
-      })
+    const fetchData2 = async () => {
+      const response = await http.get<{ groups: Data2; summary: number }>(
+        '/items/summary',
+        {
+          happen_after: props.startDate,
+          happen_before: props.endDate,
+          kind: kind.value,
+          group_by: 'tag_id'
+        },
+        {
+          _mock: 'itemSummary'
+        }
+      )
       data2.value = response.data.groups
     }
     onMounted(fetchData2)
