@@ -44,3 +44,4 @@ router.beforeEach((to, from) => {
     () => '/sign_in?return_to=' + from.path
   )
 })
+
