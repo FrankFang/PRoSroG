@@ -78,5 +78,9 @@
   height: 128px;
   &_wrapper{
     padding: 120px 0;
+    font-size: 20px;
+    p {
+      padding: 4px 0;
+    }
   }
 }
