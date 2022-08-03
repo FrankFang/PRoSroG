@@ -2,6 +2,7 @@ import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import styleImport, { VantResolve } from 'vite-plugin-style-import';
+import { VitePWA } from 'vite-plugin-pwa'
 // @ts-nocheck
 import { svgstore } from './src/vite_plugins/svgstore';
 
@@ -43,6 +44,31 @@ export default defineConfig(({command}) => {
       styleImport({
         resolves: [VantResolve()],
       }),
+      VitePWA({
+        devOptions: {
+          enabled: true
+          /* other options */
+        },
+        includeAssets: ['favicon.ico', 'pwa-192x192.png', 'pwa-512x512.png'],
+        manifest: {
+          name: '山竹记账',
+          short_name: '山竹',
+          description: '山竹记账',
+          theme_color: '#ffffff',
+          icons: [
+            {
+              src: 'pwa-192x192.png',
+              sizes: '192x192',
+              type: 'image/png'
+            },
+            {
+              src: 'pwa-512x512.png',
+              sizes: '512x512',
+              type: 'image/png'
+            }
+          ]
+        }
+      })
     ],
     server: {
       proxy: {
